@@ -78,7 +78,7 @@ const io = new Server(4000,{
 app.use(cors({
   origin:"https://dashing-profiterole-43c9fa.netlify.app/",
   methods:'GET,PUT,PATCH,POST,DELETE,HEAD',
-  credentials:true
+
 }));
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
