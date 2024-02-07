@@ -92,7 +92,7 @@ useEffect(()=>{
 
     getChats()
 
-  }, [userInfo])
+  }, [userInfo._id])
 
   useEffect(() => {
     fetchPmAndSeList()
@@ -139,7 +139,7 @@ const handleChangePpm = async(event) => {
         console.log('bnbnbn',data);
         setChats(data);
         setCurrentChat(data[0]); // Assuming you want to set the first chat related to the selected PM
-     
+     console.log('cchat',currentChat);
       } catch (error) {
         console.log(error);
       }
@@ -197,7 +197,7 @@ const handleChangePpm = async(event) => {
         {/* <div style={{ width: '20rem, alignSelf: flex-end' }}> */}
 
           <ChatBox chat={currentChat} currentUser={userInfo._id} setSendMessage={setSendMessage}
-          recieveMessage = {recieveMessage}/>
+          recieveMessage = {recieveMessage} ppm = {ppm}/>
         </div>
       </div>
     // </div>

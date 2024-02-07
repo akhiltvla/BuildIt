@@ -17,11 +17,12 @@ export const addMessage =async(req,res)=>{
 }  
 
 export const getMessages = async(req,res)=>{
+    console.log('getm');
     const {chatId} = req.params
-//    console.log('chatid',chatId);
+    console.log('chatid',chatId);
     try {
         const result = await MessageModel.find({chatId})
-        // console.log('result',result);
+         console.log('result',result);
         if(result){
             res.status(200).json(result);
           }

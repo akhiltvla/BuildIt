@@ -24,7 +24,7 @@ const httpServer = createServer(app)
 const io = new Server(4000,{
     cors:{
         
-       origin:"http://localhost:3000",
+       origin:"https://dashing-profiterole-43c9fa.netlify.app/",
        credentials:true
 
     }

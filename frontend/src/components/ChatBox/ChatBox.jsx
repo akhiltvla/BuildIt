@@ -5,7 +5,7 @@ import './ChatBox.css'
 import { format } from 'timeago.js'
 import InputEmoji from 'react-input-emoji'
 
-const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage }) => {
+const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage,ppm }) => {
     const [userData, setUserData] = useState(null)
     const [messages, setMessages] = useState([])
     const [getUser] = useGetUserMutation()
@@ -15,22 +15,22 @@ const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage }) => {
     const scroll = useRef()
 
 
-    useEffect(()=>{
-        if(recieveMessage !==null && recieveMessage.chatId === chat?._id) {
-            setMessages([...messages,recieveMessage])
+    useEffect(() => {
+        if (recieveMessage !== null && recieveMessage.chatId === chat?._id) {
+            setMessages([...messages, recieveMessage])
         }
-        }, [recieveMessage])
-    
+    }, [recieveMessage])
+
 
     // fetchng data for header
     useEffect(() => {
         const userId = chat?.members?.find((id) => id !== currentUser)
-console.log('userid::::',userId);
+        console.log('userid::::', userId);
         const getUserData = async () => {
             try {
                 const { data } = await getUser(userId)
                 setUserData(data)
-                 console.log('datatto', data);
+                console.log('datatto', data);
 
             } catch (error) {
                 console.log(error);
@@ -46,14 +46,14 @@ console.log('userid::::',userId);
         const fetchMessages = async () => {
             try {
                 const { data } = await getMessage(chat._id)
-                // console.log('dataa',data);
+                 console.log('dataa getmessage',data);
                 setMessages(data)
             } catch (error) {
                 console.log(error);
             }
         }
         if (chat !== null) fetchMessages()
-    }, [chat])
+    }, [chat,ppm])
 
     const handleChange = (newMessage) => {
         setNewMessage(newMessage)
@@ -81,11 +81,11 @@ console.log('userid::::',userId);
         setSendMessage({ ...message, recieverId })
     }
 
-// always scroll to last message
+    // always scroll to last message
 
-useEffect(()=>{
-    scroll.current?.scrollIntoView({behavior: "smooth"})
-}, [messages])
+    useEffect(() => {
+        scroll.current?.scrollIntoView({ behavior: "smooth" })
+    }, [messages])
 
     return (
         <>
@@ -114,8 +114,8 @@ useEffect(()=>{
                     <div className="chat-body">
                         {messages.map((message) => (
                             <>
-                                <div ref = {scroll}
-                                className={message.senderId === currentUser ? 'messageown' : 'message'}>
+                                <div ref={scroll}
+                                    className={message.senderId === currentUser ? 'messageown' : 'message'}>
                                     <span>{message.text}</span>{' '}
                                     <span>{format(message.createdAt)}</span>
                                 </div>
