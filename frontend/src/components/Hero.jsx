@@ -50,17 +50,21 @@ const Hero = () => {
           </Card>
           </div>
           <div className="col-sm-8" >
-            <Image src={site} width='750' height='600' alt="Description" p-2/>
+            <Image src={site} width='750' className="img-fluid"  style={{ maxHeight: '450px' }} alt="Description" p-2/>
             </div>
            
        
         
-      {/* </Container> */}
+
     </div>
     </div>
-     {/* <div className="col-12" disablePadding>
-     <Image src={Project} width='100%' alt="Description" />
-     </div> */}
+
+    <footer className="footer bg-dark text-white text-center py-3 position-fixed bottom-0 start-0 w-100">
+        <Container>
+          <p>© 2024 AkSoft. All rights reserved.</p>
+        </Container>
+      </footer>
+    
      </>
   );
 };
