@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import { generateAdminToken } from '../utils/generateToken.js';
-import Admin from '../models/adminModel.js'; // Assuming you have an Admin 
+import Admin from '../models/adminModel.js'; 
 import dotenv from 'dotenv'
 dotenv.config()
 import Pm from '../models/pmModel.js';
@@ -49,6 +49,7 @@ const authAdmin = asyncHandler(async (req, res) => {
             _id: admin._id,
 
             email: admin.email,
+            
         });
 
     } else {

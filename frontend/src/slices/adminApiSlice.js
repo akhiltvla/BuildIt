@@ -16,14 +16,14 @@ const adminsApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
-    adminregister: builder.mutation({
-      query: (data) => ({
-        url: `${ADMINS_URL}`,
-        method: 'POST',
-        body: data,
+    // adminregister: builder.mutation({
+    //   query: (data) => ({
+    //     url: `${ADMINS_URL}`,
+    //     method: 'POST',
+    //     body: data,
 
-      }),
-    }),
+    //   }),
+    // }),
 
     adminLogout: builder.mutation({
       query: () => ({
