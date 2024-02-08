@@ -1,5 +1,8 @@
 import { apiSlice } from './apiSlice'
-const ADMINS_URL = '/api/admins'
+// const ADMINS_URL = '/api/admins'
+const ADMINS_URL = 'https://buildit-q6ya.onrender.com/api/admins'
+
+
 
 const adminsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

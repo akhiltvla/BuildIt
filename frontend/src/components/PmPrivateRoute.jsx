@@ -6,7 +6,7 @@ import React from 'react'
 const PmPrivateRoute = () => {
 
     const  { pmInfo  } = useSelector((state) => state.pmAuth)
-    console.log('pmmm',pmInfo);
+   
     return pmInfo ? <Outlet />: <Navigate to='/'/>
    
 }

@@ -23,10 +23,10 @@ const httpServer = createServer(app)
 // console.log('httpserv',httpServer);
 const io = new Server(4000,{
     cors:{
-        
-       origin:"https://dashing-profiterole-43c9fa.netlify.app/",
-       methods:'GET,PUT,PATCH,POST,DELETE,HEAD',
-       credentials:true
+        credentials:true,
+      //  origin:"http://localhost:3000/",
+      origin:"https://dashing-profiterole-43c9fa.netlify.app",
+       
 
     }
 })
@@ -75,11 +75,12 @@ const io = new Server(4000,{
   });
 });
 
-app.use(cors({
-  origin:"https://dashing-profiterole-43c9fa.netlify.app/",
-  methods:'GET,PUT,PATCH,POST,DELETE,HEAD',
-
-}));
+// app.use(cors({
+//   origin:"https://dashing-profiterole-43c9fa.netlify.app/",
+//   methods:'GET,PUT,PATCH,POST,DELETE,HEAD',
+//   credentials:true
+// }));
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())

@@ -197,7 +197,7 @@ const handleChangePpm = async(event) => {
         {/* <div style={{ width: '20rem, alignSelf: flex-end' }}> */}
 
           <ChatBox chat={currentChat} currentUser={userInfo._id} setSendMessage={setSendMessage}
-          recieveMessage = {recieveMessage} ppm = {ppm}/>
+          recieveMessage = {recieveMessage} />
         </div>
       </div>
     // </div>

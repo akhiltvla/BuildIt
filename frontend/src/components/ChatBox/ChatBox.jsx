@@ -5,7 +5,7 @@ import './ChatBox.css'
 import { format } from 'timeago.js'
 import InputEmoji from 'react-input-emoji'
 
-const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage,ppm }) => {
+const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage}) => {
     const [userData, setUserData] = useState(null)
     const [messages, setMessages] = useState([])
     const [getUser] = useGetUserMutation()
@@ -53,7 +53,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage,ppm }) => {
             }
         }
         if (chat !== null) fetchMessages()
-    }, [chat,ppm])
+    }, [chat])
 
     const handleChange = (newMessage) => {
         setNewMessage(newMessage)

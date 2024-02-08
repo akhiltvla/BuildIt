@@ -1,5 +1,8 @@
 import  { apiSlice } from  './apiSlice'
-const MESSAGES_URL = '/api/messages'
+// const MESSAGES_URL = '/api/messages'
+
+const MESSAGES_URL = 'https://buildit-q6ya.onrender.com/api/messages'
+
 
 const messageApiSlice = apiSlice.injectEndpoints({
     endpoints:(builder)=>({

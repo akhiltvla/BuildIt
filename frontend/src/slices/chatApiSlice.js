@@ -1,6 +1,6 @@
 import  { apiSlice } from  './apiSlice'
-const CHATS_URL = '/api/chats'
-
+// const CHATS_URL = '/api/chats'
+const CHATS_URL = 'https://buildit-q6ya.onrender.com/api/chats'
 const chatApiSlice = apiSlice.injectEndpoints({
     endpoints:(builder)=>({
 

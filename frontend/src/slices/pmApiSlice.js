@@ -1,5 +1,7 @@
 import  { apiSlice } from  './apiSlice'
-const PMS_URL = '/api/pms'
+// const PMS_URL = '/api/pms'
+const PMS_URL = 'https://buildit-q6ya.onrender.com/api/pms'
+
 
 const pmsApiSlice = apiSlice.injectEndpoints({
     endpoints:(builder)=>({

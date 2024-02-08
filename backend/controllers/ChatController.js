@@ -1,3 +1,4 @@
+import asyncHandler from 'express-async-handler';
 import ChatModel from '../models/ChatModel.js';
 
 
@@ -15,7 +16,20 @@ export const createChat = async (req,res)=>{
         res.status(500).json(error)
     }
 }
-
+// export const createChat = asyncHandler(async (req, res) => {
+//     const chat = await ChatModel.findOne({
+//       members: { $all: [req.body.senderId, req.body.recieverId] },
+//     });
+//     if (!chat) {
+//       const newChat = new ChatModel({
+//         members: [req.body.senderId, req.body.recieverId],
+//       });
+//       await newChat.save();
+//       return res.status(200).json(newChat);
+//     }
+//     res.status(200).json(chat);
+//   });
+  
 
 
 export const userChats = async (req, res) => {

@@ -14,7 +14,7 @@ import {Provider} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import PrivateRoute from './components/PrivateRoute.jsx'
-import PmPrivateRoute from './components/pmPrivateRoute.jsx'
+import PmPrivateRoute from './components/PmPrivateRoute.jsx'
 import AdminPrivateRoute from './components/AdminPrivateRoute.jsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen.jsx'
@@ -73,6 +73,7 @@ const router = createBrowserRouter(
       
       <Route path='/pmlogin'element={<PmLoginScreen />} />
       <Route path='/pmregister'element={<PmRegisterScreen />} />
+      <Route path='/pmchat' element={<PmChat />} />
       <Route path='' element={<PmPrivateRoute />}>
       <Route path='/pmprofile' element={<PmProfileScreen />} />
       <Route path='/pmdash' element={<PmDashScreen />} />
@@ -80,7 +81,7 @@ const router = createBrowserRouter(
       <Route path='/pmdocument' element={<PmDocumentScreen />} />
       <Route path='/pmrequest' element={<PmRequestScreen />} />
       <Route path='/pmlocation' element={<PmLocationScreen />} />
-      <Route path='/pmchat' element={<PmChat />} />
+
       </Route> 
 
 
