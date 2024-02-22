@@ -4,9 +4,9 @@ import { LinkContainer } from "react-router-bootstrap";
 import pm from "../assets/pm.jpg";
 import se from "../assets/se.jpg";
 import site from "../assets/site.jpg";
-import build1 from "../assets/build1.JPG";
-import build2 from "../assets/build2.JPG";
-import build3 from "../assets/build3.JPG";
+import build1 from "../assets/build1.jpg";
+import build2 from "../assets/build2.jpg";
+import build3 from "../assets/build3.jpg";
 import Project from "../assets/Project.jpg";
 
 const Hero = () => {
