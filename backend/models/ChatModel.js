@@ -3,10 +3,11 @@ import mongoose from 'mongoose'
 
 
 const ChatSchema = mongoose.Schema({
-    members: {
-        type: Array,
+    members: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
         
-    },  
+    }] 
 },
      {
         timestamps: true

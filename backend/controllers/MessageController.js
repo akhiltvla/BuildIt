@@ -23,12 +23,12 @@ export const getMessages = async(req,res)=>{
     try {
         const result = await MessageModel.find({chatId})
          console.log('result',result);
-        if(result){
+       
             res.status(200).json(result);
-          }
-          else {
-            res.status(404).json("No such Message");
-          }
+          
+        //   else {
+        //     res.status(404).json("No such Message");
+        //   }
     } catch (error) {
         res.status(500).json(error) 
     }

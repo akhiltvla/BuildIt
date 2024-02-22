@@ -9,7 +9,7 @@ import { createChat, findChat, userChats } from '../controllers/ChatController.j
 
 
 chatRouter.post('/',createChat);
-chatRouter.get('/:userId',userChats)
+chatRouter.get('/:memberId',userChats)
 
 chatRouter.get('/find/:firstId/:secondId', findChat)
 

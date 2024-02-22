@@ -17,6 +17,7 @@ const Chat = () => {
   const [userChats] = useUserChatsMutation()
   // const socket = useRef()
   const { userInfo } = useSelector((state) => state.auth)
+  const {pmInfo } = useSelector((state) => state.auth)
   
   const [ppm, setPpm] = useState('');
   const [seList, setSeList] = useState([]);
@@ -81,10 +82,14 @@ useEffect(()=>{
 
     const getChats = async () => {
       try {
-
+        
         const { data } = await userChats(userInfo._id)
-
-        setChats(data)
+        if (data) {
+         
+          setChats(data)
+          console.log('setcha',data);
+        }
+        
       } catch (error) {
         console.log(error);
       }
@@ -92,7 +97,7 @@ useEffect(()=>{
 
     getChats()
 
-  }, [userInfo._id])
+  }, [userInfo])
 
   useEffect(() => {
     fetchPmAndSeList()
@@ -132,14 +137,14 @@ const handleChangePpm = async(event) => {
   
   setPpm(selectedPMName);
   const selectedPM = pmList.find(pm => pm.name === selectedPMName);
-  
+  console.log('selectedPm',selectedPM);
     if (selectedPM) {
       try {
         const { data } = await userChats(selectedPM._id);
         console.log('bnbnbn',data);
-        setChats(data);
-        setCurrentChat(data[0]); // Assuming you want to set the first chat related to the selected PM
-     console.log('cchat',currentChat);
+        //setChats(data);
+        setCurrentChat(data); // Assuming you want to set the first chat related to the selected PM
+     console.log('cchat',data);
       } catch (error) {
         console.log(error);
       }
@@ -163,6 +168,7 @@ const handleChangePpm = async(event) => {
 
 
           <FormControl >
+
             <InputLabel id="pm-label">Project Manager</InputLabel>
             <Select labelId="pm-label" id="pm"
               value={ppm} onChange={handleChangePpm}>

@@ -6,6 +6,9 @@ import { format } from 'timeago.js'
 import InputEmoji from 'react-input-emoji'
 
 const ChatBox = ({ chat, currentUser, setSendMessage, recieveMessage}) => {
+
+
+    //console.log('chat,currenyuser,sendmessage, recieve message',chat, currentUser, setSendMessage, recieveMessage)
     const [userData, setUserData] = useState(null)
     const [messages, setMessages] = useState([])
     const [getUser] = useGetUserMutation()

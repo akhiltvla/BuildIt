@@ -33,7 +33,7 @@ const Conversation = ({ data, currentUserId, online }) => {
  
     return (
         <>
-      <div className="follower conversation">
+      {/* <div className="follower conversation">
         <div>
          {online && <div className="online-dot"></div>}
           <img
@@ -48,7 +48,7 @@ const Conversation = ({ data, currentUserId, online }) => {
           </div>
         </div>
       </div>
-      <hr style={{ width: "85%", border: "0.1px solid #ececec" }} />
+      <hr style={{ width: "85%", border: "0.1px solid #ececec" }} /> */}
     </>
     )
 }
